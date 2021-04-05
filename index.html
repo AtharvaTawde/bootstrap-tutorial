@@ -36,9 +36,7 @@
                                 class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
-                        <span class="fa fa-sign-in"></span> Login
-                    </a>
+                    <a id="login"><span class="fa fa-sign-in"></span> Login</a>
                 </span>
             </div>
         </div>
@@ -124,9 +122,11 @@
                         </div>
                         <div class="form-group row">
                             <label for="date" class="col-md-2 col-form-label">Date and Time</label>
-                            <div class="col-md-10">
-                                <input type="text" placeholder="Date">
-                                <input type="text" placeholder="Time">
+                            <div class="form-group col-md-5">
+                                <input type="text" placeholder="Date" class="form-control form-control-sm mr-1">
+                            </div>
+                            <div class="form-group col-md-5">
+                                <input type="text" placeholder="Time" class="form-control form-control-sm mr-1">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -159,8 +159,7 @@
                         Table</a> -->
                     <!-- #endregion -->
 
-                    <a class="btn btn-block btn-sm btn-warning" data-toggle="modal" data-target="#reserveModal">Reserve
-                        Table</a>
+                    <a id="reserve" class="btn btn-block btn-sm btn-warning">Reserve Table</a>
                 </div>
             </div>
         </div>
@@ -397,33 +396,7 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- #region Script to Run Tooltip -->
-    <!-- <script>
-        $(document).ready(function () {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script> -->
-    <!-- #endregion -->
-
-    <!-- #region Carousel Controls -->
-    <script>
-        $(document).ready(function () {
-            $("#mycarousel").carousel({ interval: 2000 });
-            $("#carouselButton").click(function () {
-                if ($("#carouselButton").children("span").hasClass("fa-pause")) {
-                    $("#mycarousel").carousel('pause');
-                    $("#carouselButton").children("span").removeClass("fa-pause");
-                    $("#carouselButton").children("span").addClass("fa-play");
-                } else {
-                    $("#mycarousel").carousel('cycle');
-                    $("#carouselButton").children("span").removeClass("fa-play");
-                    $("#carouselButton").children("span").addClass("fa-pause");
-                }
-            });
-        })
-    </script>
-    <!-- #endregion -->
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
