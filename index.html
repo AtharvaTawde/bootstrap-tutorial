@@ -44,7 +44,7 @@
         </div>
     </nav>
 
-    <!-- #region Modal -->
+    <!-- #region Login Modal -->
     <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
@@ -86,6 +86,7 @@
     </div>
     <!-- #endregion -->
 
+    <!-- #region Reserve Modal -->
     <div id="reserveModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
@@ -117,15 +118,9 @@
                         <div class="form-group row">
                             <label for="section" class="col-md-2 col-form-label">Section</label>
                             <div class="btn btn-group col-md-10" role="group" data-toggle="buttons">
-                                <!-- <label class="btn btn-success text-white active">
-                                    <input type="radio" value="nonsmoking" name="section" style="display: none;" checked> Non-Smoking
-                                </label>
-                                <label class="btn btn-danger text-white">
-                                    <input type="radio" value="smoking" name="section" style="display: none;"> Smoking
-                                </label> -->
                                 <button type="button" class="btn btn-success text-white active">Non-Smoking</button>
                                 <button type="button" class="btn btn-danger text-white">Smoking</button>
-                            </div> 
+                            </div>
                         </div>
                         <div class="form-group row">
                             <label for="date" class="col-md-2 col-form-label">Date and Time</label>
@@ -144,6 +139,7 @@
             </div>
         </div>
     </div>
+    <!-- #endregion -->
 
     <header class="jumbotron">
         <div class="container">
@@ -229,6 +225,14 @@
                     <a class="carousel-control-next" href="#mycarousel" role="button" data-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </a>
+                    <div class="btn-group" id="carouselButton">
+                        <button class="btn btn-danger btn-sm" id="carousel-pause">
+                            <span class="fa fa-pause"></span>
+                        </button>
+                        <button class="btn btn-danger btn-sm" id="carousel-play">
+                            <span class="fa fa-play"></span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -405,6 +409,20 @@
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script> -->
+    <!-- #endregion -->
+
+    <!-- #region Carousel Controls -->
+    <script>
+        $(document).ready(function() {
+            $("#mycarousel").carousel({interval: 2000});
+            $("#carousel-pause").click(function() {
+                $("#mycarousel").carousel('pause');
+            });
+            $("#carousel-play").click(function() {
+                $("#mycarousel").carousel('cycle');
+            });
+        })
+    </script>
     <!-- #endregion -->
 </body>
 
